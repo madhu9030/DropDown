@@ -1,22 +1,129 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <link rel="stylesheet" href="index.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="./css/index.css">
 </head>
 <body>
+<div class="container">
+<div class="dropdown-container">
+  <ul class="dropdown-list">
+    <li><a href="#home">Home</a></li>
+    <li><a href="#news">News</a></li>
+    <li class="dropdown">
+      <a href="javascript:void(0)" class="dropbtn">Dropdown</a>
+      <div class="dropdown-content">
+        <a href="#">Link 1</a>
+        <a href="#">Link 2</a>
+        <a href="#">Link 3</a>
+      </div>
+    </li>
+  </ul>
+</div>
+  <!-- filter -->
+<div class="flex filter">
+  <div>Change Button color: </div>
+  <select name="" onchange="selectedBank()" id="filter"></select>
+  <button id="change" class="button">Select from dropdown</button>
+</div>
 
-<ul>
-  <li><a href="#home">Home</a></li>
-  <li><a href="#news">News</a></li>
-  <li class="dropdown">
-    <a href="javascript:void(0)" class="dropbtn">Dropdown</a>
-    <div class="dropdown-content">
-      <a href="#">Link 1</a>
-      <a href="#">Link 2</a>
-      <a href="#">Link 3</a>
+<!-- input box search filter -->
+<div class="flex">
+  <div>Filter on TypeAhead: </div>
+  <div class="filter-searchbar">
+    <input type="text" oninput="filterList(this)" class="search" id="input-search" placeholder="Search for list">
+  </div>
+</div>
+
+  <!-- logos markup-->
+  <div class="logos">
+    <div class="flex">
+        <div>Spinner:</div>
+        <div class="spinner"></div>
     </div>
-  </li>
-</ul>
+    <div class="flex">
+        <div>Chevron's:</div>
+        <div>
+            <div class="chevron-wrapper">
+                <div class="chevron up"></div>
+                <div class="chevron right"></div>
+                <div class="chevron down"></div>
+                <div class="chevron left"></div>
+            </div>
+        </div>
+    </div>
+    <div class="flex">
+        <div>Bag:</div>
+        <div class="bag"></div>
+    </div>
+      
+    <div class="flex">
+      <div class="overlay flex-color slide-top">
+          <div class="overlay-container">
+          <input type="checkbox" id="overlay-checkbox" name="overlay-checkbox">
+          <label for="overlay-checkbox" class="">
+          <span class="link-label">Open overlay -- (From Top)</span>
+          </label>
+          <div class="overlay-wrapper">
+            <div class="overlay-content">
+              <label for="overlay-checkbox" class="cancel"></label>
+              <div class="main-content">
+                <div>
+                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Nobis sit quaerat perspiciatis dicta vitae ut quisquam nemo fugit illo atque impedit, beatae explicabo officia nesciunt, amet odit error! Assumenda, illum, praesentium non qui modi quo, quod perferendis quas cupiditate tempore error dolores quidem deserunt. Magnam vero asperiores dignissimos consequuntur aspernatur.
+                </div>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Nobis sit quaerat perspiciatis dicta vitae ut quisquam nemo fugit illo atque impedit, beatae explicabo officia nesciunt, amet odit error! Assumenda, illum, praesentium non qui modi quo, quod perferendis quas cupiditate tempore error dolores quidem deserunt. Magnam vero asperiores dignissimos consequuntur aspernatur.
+              </div>
+            </div>
+          </div>
+      </div>
+    </div>
+    <div class="overlay flex-color slide-left">
+          <div class="overlay-container">
+          <input type="checkbox" id="overlay-checkbox1" name="overlay-checkbox">
+          <label for="overlay-checkbox1" class="">
+          <span class="link-label">Open overlay -- (From Left)</span>
+          </label>
+          <div class="overlay-wrapper">
+            <div class="overlay-content">
+              <label for="overlay-checkbox1" class="cancel"></label>
+              <div class="main-content">
+                <div>
+                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Nobis sit quaerat perspiciatis dicta vitae ut quisquam nemo fugit illo atque impedit, beatae explicabo officia nesciunt, amet odit error! Assumenda, illum, praesentium non qui modi quo, quod perferendis quas cupiditate tempore error dolores quidem deserunt. Magnam vero asperiores dignissimos consequuntur aspernatur.
+                </div>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Nobis sit quaerat perspiciatis dicta vitae ut quisquam nemo fugit illo atque impedit, beatae explicabo officia nesciunt, amet odit error! Assumenda, illum, praesentium non qui modi quo, quod perferendis quas cupiditate tempore error dolores quidem deserunt. Magnam vero asperiores dignissimos consequuntur aspernatur.
+              </div>
+            </div>
+          </div>
+      </div>
+    </div>
+    </div>
+  </div>
+  <!-- rock paper scissors -->
+<div class="rps-game">
+  <div class="game-title flex">Rock, Paper, Scissor -- Game</div>
+  <div class="game flex">
+  <img id="Rock" src="./images/rock.png" alt="" onclick="runGame(this)">
+  <img id="Paper" src="./images/paper.png" alt="" onclick="runGame(this)">
+  <img id="Scissor" src="./images/scissor.png" alt="" onclick="runGame(this)">
+</div>
+<div class="winner-details flex">
+  <div class="selection-details">
+    <div class="winner">User Selected: <span id="user"><img id="last-selected" class="user-selected" src="./images/giphy4.gif"></span></div>
+    <div class="winner">Robot Selected: <span id="robot"><img id="last-selected" class="user-selected" src="./images/giphy4.gif"></span></div>
+  </div>
+  <div id="winner" class="winner"><img id="confetti" src='./images/giphy4.gif' alt=""><span id="winnertext"></span></div>
+</div>
+</div>
+</div>
 
+<!-- Rain -->
+<!-- <div class="rain">
+  <div class="rain1">R</div>
+  <div class="rain2">A</div>
+  <div class="rain3">I</div>
+  <div class="rain4">N</div>
+</div> -->
+<script src="index.js"></script>
 </body>
 </html>
